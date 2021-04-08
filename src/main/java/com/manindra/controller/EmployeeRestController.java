@@ -26,14 +26,14 @@ public class EmployeeRestController {
 	private IEmployeeService service;
 	
 	
-	//1.save
+	//1.saving employee
 	@PostMapping("/save")
 	public ResponseEntity<String> saveEmployee(@RequestBody Employee employee){
 		Integer id=service.saveEmployee(employee);
 		return new ResponseEntity<String>("Employee ' "+id+" ' saved", HttpStatus.CREATED);
 	}
 	
-	//2.fetchAll
+	//2.fetchAll employee
 	@GetMapping("/all")
 	public ResponseEntity<List<Employee>> getAllEmployees(){
 		
